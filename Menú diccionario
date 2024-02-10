@@ -1,0 +1,46 @@
+print("    MENU")
+print("1-Agregar elementos")
+print("2-Buscar elemento")
+print("3-Cambiar elemento")
+print("4-Borrar elemento")
+print("5-Mostrar diccionario")
+print("6-Salir")
+dic={}
+while True:
+    op=input("Seleccione una opcion: ")
+    if op=="1":
+        print(" AGREGAR ELEMENTO")
+        key=input("Escriba la clave del dato: ")
+        des=input("Escriba la descripcion del dato: ")
+        dic[key]=[des]
+    if op=="2":
+        print(" BUSCAR ELEMENTO")
+        key=input("Escriba la clave del dato: ")
+        if key in dic:
+            clave=dic[key]
+            print(clave)
+        else:
+            print("ERROR: No se encontro el elemento")
+    if op=="3":
+        print(" CAMBIAR ELEMENTO")
+        key=input("Escriba la clave del elemento que desea cambiar: ")
+        if key in dic:
+            nuevo=input("Ingrese el cambio del elemento: ")
+            dic[key]=[nuevo]
+            print("Correccion completada :)")
+        else:
+            print("ERROR: no se encontro esa clave")
+    if op=="4":
+        print(" BORRAR ELEMENTO")
+        key=input("Escriba la clave del dato que quiera eliminar: ")
+        dic.pop(key)
+        print("Opcion completada")
+    if op=="5":
+        print(" MOSTRAR EL DICCIONARIO")
+        for key in dic:
+          print(key,"=",dic[key])
+    if op=="6":
+        print(" SALIR")
+        break
+else:
+    print("ERROR: Opcion no valida, intente de nuevo :s")
